@@ -1,6 +1,7 @@
 package extensions.java.util.Set;
 
 import manifold.ext.api.Extension;
+import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -17,6 +18,19 @@ public final class JavaSetExtension {
     @Extension
     public static <E> Set<E> of(E e1, E... others) {
         return Stream.concat(Stream.of(e1), Stream.of(others))
+                .toSet();
+    }
+
+    @Extension
+    public static <E> Set<E> copyOf(E[] elements) {
+        return Stream.of(elements)
+                .toSet();
+    }
+
+    @Extension
+    @SuppressWarnings("unchecked")
+    public static <E> Set<E> copyOf(Collection<? extends E> elements) {
+        return (Set<E>) elements.stream()
                 .toSet();
     }
 }
