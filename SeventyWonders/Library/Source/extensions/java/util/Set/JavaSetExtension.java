@@ -13,4 +13,10 @@ public final class JavaSetExtension {
         return (Set<E>) Stream.empty()
                 .toSet();
     }
+
+    @Extension
+    public static <E> Set<E> of(E e1, E... others) {
+        return Stream.concat(Stream.of(e1), Stream.of(others))
+                .toSet();
+    }
 }
