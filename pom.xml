@@ -72,6 +72,13 @@
     </build>
 
     <dependencies>
+        <!-- use Guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
+
         <!-- use Junit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
