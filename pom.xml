@@ -14,8 +14,42 @@
     </properties>
 
     <build>
-        <sourceDirectory>SeventyWonders/Source</sourceDirectory>
-        <testSourceDirectory>SeventyWonders/Test</testSourceDirectory>
+        <plugins>
+            <!-- configure source/test directories -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>SeventyWonders/Library/Source</source>
+                                <source>SeventyWonders/Source</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-test-source</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>SeventyWonders/Library/Test</source>
+                                <source>SeventyWonders/Test</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <packaging>jar</packaging>
