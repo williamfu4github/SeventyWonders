@@ -59,6 +59,15 @@
                     <!-- use Java 8 -->
                     <source>1.8</source>
                     <target>1.8</target>
+
+                    <compilerArgument>-Xplugin:Manifold</compilerArgument>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>systems.manifold</groupId>
+                            <artifactId>manifold-all</artifactId>
+                            <version>2019.1.22</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
 
@@ -77,6 +86,13 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>28.0-jre</version>
+        </dependency>
+
+        <!-- use Manifold -->
+        <dependency>
+            <groupId>systems.manifold</groupId>
+            <artifactId>manifold-all</artifactId>
+            <version>2019.1.22</version>
         </dependency>
 
         <!-- use Junit 5 -->
