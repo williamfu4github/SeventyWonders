@@ -67,6 +67,11 @@
                             <artifactId>manifold-all</artifactId>
                             <version>2019.1.22</version>
                         </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.10</version>
+                        </path>
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
@@ -93,6 +98,14 @@
             <groupId>systems.manifold</groupId>
             <artifactId>manifold-all</artifactId>
             <version>2019.1.22</version>
+        </dependency>
+
+        <!-- use Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- use Junit 5 -->
