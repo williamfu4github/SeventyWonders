@@ -15,6 +15,12 @@ public final class GuavaMultisetExtension {
                 .toMultiset();
     }
 
+    @Extension
+    public static <E> Multiset<E> of(E e1, E... others) {
+        return Stream.concat(Stream.of(e1), Stream.of(others))
+                .toMultiset();
+    }
+
     public static <E> Multiset<E> insert(@This Multiset<E> thiz, E element) {
         thiz.add(element);
         return thiz;
