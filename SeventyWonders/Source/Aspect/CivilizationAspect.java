@@ -1,6 +1,7 @@
 package Aspect;
 
 import Benefit.CivilizationBenefit;
+import Resource.ResourceProfile;
 import lombok.EqualsAndHashCode;
 import java.util.Optional;
 import java.util.Set;
@@ -16,4 +17,6 @@ public abstract class CivilizationAspect {
     public abstract Optional<CivilizationAspect> getPrerequisiteAspect();
 
     public abstract Integer getFinancialCost();
+
+    public abstract ResourceProfile getResourceCost();
 }
