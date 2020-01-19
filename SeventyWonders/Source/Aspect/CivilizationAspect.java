@@ -19,4 +19,6 @@ public abstract class CivilizationAspect {
     public abstract Integer getFinancialCost();
 
     public abstract ResourceProfile getResourceCost();
+
+    public abstract Optional<CivilizationAspect> getInspiringAspect();
 }
