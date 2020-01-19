@@ -14,4 +14,6 @@ public abstract class CivilizationAspect {
     public abstract Set<CivilizationBenefit> getBenefits();
 
     public abstract Optional<CivilizationAspect> getPrerequisiteAspect();
+
+    public abstract Integer getFinancialCost();
 }
