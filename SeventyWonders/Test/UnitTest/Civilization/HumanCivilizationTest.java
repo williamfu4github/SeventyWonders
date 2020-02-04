@@ -8,6 +8,7 @@ import manifold.ext.api.Jailbreak;
 import org.junit.jupiter.api.Test;
 import java.util.Set;
 import static Utility.TestInstanceFactory.MineTest;
+import static Utility.TestInstanceFactory.MinistryOfNationalResourceTest;
 import static Utility.TestInstanceFactory.OreVeinTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -34,10 +35,13 @@ public final class HumanCivilizationTest implements SingleClassUnitTest<HumanCiv
         @Jailbreak HumanCivilization civilization1 = this.createInstance();
         civilization1.developedAspects
                 .insert(MineTest.createInstance());
+        civilization1.rulingGovernment
+                .insert(MinistryOfNationalResourceTest.createInstance());
         @Jailbreak HumanCivilization civilization2 = this.createInstance();
         civilization2.developedAspects
                 .insert(MineTest.createInstance());
-        // TODO add equal rulingGovernments to the two civilizations
+        civilization2.rulingGovernment
+                .insert(MinistryOfNationalResourceTest.createInstance());
         assertEquals(civilization1, civilization2);
     }
 

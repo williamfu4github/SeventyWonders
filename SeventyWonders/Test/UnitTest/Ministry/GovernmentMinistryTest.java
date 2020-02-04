@@ -4,6 +4,7 @@ import Ministry.GovernmentMinistry;
 import TesterBase.UnitTest.SingleClassUnitTest;
 import manifold.ext.api.Jailbreak;
 import org.junit.jupiter.api.Test;
+import static Utility.TestInstanceFactory.MinistryOfNationalResourceTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public final class GovernmentMinistryTest implements SingleClassUnitTest<GovernmentMinistry> {
@@ -15,8 +16,7 @@ public final class GovernmentMinistryTest implements SingleClassUnitTest<Governm
 
     @Override
     public GovernmentMinistry createRealInstance() {
-        // TODO return real object
-        return null;
+        return MinistryOfNationalResourceTest.createRealInstance();
     }
 
     @Test

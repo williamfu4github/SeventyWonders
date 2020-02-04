@@ -11,6 +11,7 @@ import UnitTest.Benefit.ResourceSupply.FlexibleSupplyTest;
 import UnitTest.Benefit.ResourceSupply.ResourceSupplyTest;
 import UnitTest.Civilization.HumanCivilizationTest;
 import UnitTest.Ministry.GovernmentMinistryTest;
+import UnitTest.Ministry.MinistryOfNationalResourceTest;
 import UnitTest.Resource.ResourceProfileTest;
 
 public final class TestInstanceFactory {
@@ -27,6 +28,7 @@ public final class TestInstanceFactory {
     public static OreVeinTest OreVeinTest;
     public static HumanCivilizationTest HumanCivilizationTest;
     public static GovernmentMinistryTest GovernmentMinistryTest;
+    public static MinistryOfNationalResourceTest MinistryOfNationalResourceTest;
 
     static {
         ResourceProfileTest = new ResourceProfileTest();
@@ -41,5 +43,6 @@ public final class TestInstanceFactory {
         OreVeinTest = new OreVeinTest();
         HumanCivilizationTest = new HumanCivilizationTest();
         GovernmentMinistryTest = new GovernmentMinistryTest();
+        MinistryOfNationalResourceTest = new MinistryOfNationalResourceTest();
     }
 }
