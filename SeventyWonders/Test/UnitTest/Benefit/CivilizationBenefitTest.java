@@ -3,6 +3,7 @@ package UnitTest.Benefit;
 import Benefit.CivilizationBenefit;
 import TesterBase.UnitTest.SingleClassUnitTest;
 import org.junit.jupiter.api.Test;
+import static Utility.TestInstanceFactory.ResourceSupplyTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public final class CivilizationBenefitTest implements SingleClassUnitTest<CivilizationBenefit> {
@@ -13,8 +14,7 @@ public final class CivilizationBenefitTest implements SingleClassUnitTest<Civili
 
     @Override
     public CivilizationBenefit createRealInstance() {
-        // TODO return a real object
-        return null;
+        return ResourceSupplyTest.createRealInstance();
     }
 
     @Test
