@@ -17,4 +17,9 @@ public final class FlexibleSupply extends ResourceSupply {
                 .toSet();
         Preconditions.checkArgument(this.possibleItems.size() == otherOptions.length + 2, "possibleItems cannot have duplicates");
     }
+
+    @Override
+    protected Set<ResourceType> getPossibleSupplies() {
+        return Set.copyOf(this.possibleItems);
+    }
 }

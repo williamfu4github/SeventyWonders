@@ -5,6 +5,7 @@ import Resource.ResourceType;
 import TesterBase.UnitTest.SingleClassUnitTest;
 import manifold.ext.api.Jailbreak;
 import org.junit.jupiter.api.Test;
+import java.util.Set;
 import static Utility.TestInstanceFactory.ResourceSupplyTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -44,5 +45,12 @@ public final class DedicatedSupplyTest implements SingleClassUnitTest<DedicatedS
     public void test_constructor_happyPath() {
         @Jailbreak DedicatedSupply supply = new DedicatedSupply(ResourceType.ORE);
         assertEquals(ResourceType.ORE, supply.dedicatedItem);
+    }
+
+    @Test
+    public void test_getPossibleSupplies_happyPath() {
+        @Jailbreak DedicatedSupply supply = this.createInstance();
+        supply.dedicatedItem = ResourceType.ORE;
+        assertEquals(Set.of(ResourceType.ORE), supply.getPossibleSupplies());
     }
 }

@@ -54,4 +54,11 @@ public final class FlexibleSupplyTest implements SingleClassUnitTest<FlexibleSup
         @Jailbreak FlexibleSupply supply = new FlexibleSupply(ResourceType.ORE, ResourceType.WOOD, ResourceType.CLAY);
         assertEquals(Set.of(ResourceType.ORE, ResourceType.WOOD, ResourceType.CLAY), supply.possibleItems);
     }
+
+    @Test
+    public void test_getPossibleSupplies_happyPath() {
+        @Jailbreak FlexibleSupply supply = this.createInstance();
+        supply.possibleItems = Set.of(ResourceType.ORE, ResourceType.WOOD);
+        assertEquals(Set.of(ResourceType.ORE, ResourceType.WOOD), supply.getPossibleSupplies());
+    }
 }

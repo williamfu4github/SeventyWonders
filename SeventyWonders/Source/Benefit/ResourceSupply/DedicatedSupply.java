@@ -2,6 +2,7 @@ package Benefit.ResourceSupply;
 
 import Resource.ResourceType;
 import lombok.EqualsAndHashCode;
+import java.util.Set;
 
 @EqualsAndHashCode
 public final class DedicatedSupply extends ResourceSupply {
@@ -11,5 +12,10 @@ public final class DedicatedSupply extends ResourceSupply {
 
     public DedicatedSupply(ResourceType dedicatedItem) {
         this.dedicatedItem = dedicatedItem;
+    }
+
+    @Override
+    protected Set<ResourceType> getPossibleSupplies() {
+        return Set.of(this.dedicatedItem);
     }
 }
