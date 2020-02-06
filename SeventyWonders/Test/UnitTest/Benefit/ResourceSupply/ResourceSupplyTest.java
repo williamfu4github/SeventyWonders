@@ -4,6 +4,7 @@ import Benefit.ResourceSupply.ResourceSupply;
 import TesterBase.UnitTest.SingleClassUnitTest;
 import org.junit.jupiter.api.Test;
 import static Utility.TestInstanceFactory.CivilizationBenefitTest;
+import static Utility.TestInstanceFactory.DedicatedSupplyTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public final class ResourceSupplyTest implements SingleClassUnitTest<ResourceSupply> {
@@ -15,8 +16,7 @@ public final class ResourceSupplyTest implements SingleClassUnitTest<ResourceSup
 
     @Override
     public ResourceSupply createRealInstance() {
-        // TODO return real object
-        return null;
+        return DedicatedSupplyTest.createRealInstance();
     }
 
     @Test
