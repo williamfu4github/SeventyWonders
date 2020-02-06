@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public final class ResourceProfileTest implements SingleClassUnitTest<ResourceProfile> {
 
@@ -73,6 +74,21 @@ public final class ResourceProfileTest implements SingleClassUnitTest<ResourcePr
                 .set(ResourceType.TEXTILE, 2)
                 .set(ResourceType.PAPYRUS, 0);
         assertEquals(profile, ResourceProfile.copyOf(profile));
+    }
+
+    @Test
+    public void test_setResourceAmount_invalidArgument_negativeAmount() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            this.createInstance().setResourceAmount(ResourceType.ORE, -1);
+        });
+    }
+
+    @Test
+    public void test_setResourceAmount_happyPath() {
+        @Jailbreak ResourceProfile profile = this.createInstance();
+        profile.resourceItems.put(ResourceType.ORE, 2);
+        profile.setResourceAmount(ResourceType.ORE, 5);
+        assertEquals(5, profile.resourceItems.get(ResourceType.ORE));
     }
 
     @Test

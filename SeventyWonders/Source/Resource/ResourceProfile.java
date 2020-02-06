@@ -1,5 +1,6 @@
 package Resource;
 
+import com.google.common.base.Preconditions;
 import lombok.EqualsAndHashCode;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -16,6 +17,12 @@ public final class ResourceProfile {
 
     public static ResourceProfile copyOf(ResourceProfile other) {
         return new ResourceProfile(other);
+    }
+
+    public ResourceProfile setResourceAmount(ResourceType resourceType, Integer amount) {
+        Preconditions.checkArgument(amount >= 0);
+        this.resourceItems.put(resourceType, amount);
+        return this;
     }
 
     private ResourceProfile() {
