@@ -25,6 +25,11 @@ public final class ResourceProfile {
         return this;
     }
 
+    public ResourceProfile increaseResourceAmount(ResourceType resourceType) {
+        this.resourceItems.put(resourceType, this.resourceItems.get(resourceType) + 1);
+        return this;
+    }
+
     private ResourceProfile() {
         this.resourceItems = Stream.of(ResourceType.values())
                 .toMap(type -> type, type -> 0);

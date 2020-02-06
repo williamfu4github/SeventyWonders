@@ -92,6 +92,14 @@ public final class ResourceProfileTest implements SingleClassUnitTest<ResourcePr
     }
 
     @Test
+    public void test_increaseResourceSupply_happyPath() {
+        @Jailbreak ResourceProfile profile = this.createInstance();
+        profile.resourceItems.put(ResourceType.ORE, 2);
+        profile.increaseResourceAmount(ResourceType.ORE);
+        assertEquals(3, profile.resourceItems.get(ResourceType.ORE));
+    }
+
+    @Test
     public void test_constructor_happyPath() {
         Map<ResourceType, Integer> resources = Map.<ResourceType, Integer>emptyMap()
                 .set(ResourceType.WOOD, 0)
