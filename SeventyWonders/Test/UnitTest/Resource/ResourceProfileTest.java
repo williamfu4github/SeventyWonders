@@ -74,4 +74,20 @@ public final class ResourceProfileTest implements SingleClassUnitTest<ResourcePr
         @Jailbreak ResourceProfile profile = new @Jailbreak ResourceProfile();
         assertEquals(resources, profile.resourceItems);
     }
+
+    @Test
+    public void test_copyConstructor_happyPath() {
+        Map<ResourceType, Integer> resources = Map.<ResourceType, Integer>emptyMap()
+                .set(ResourceType.WOOD, 0)
+                .set(ResourceType.STONE, 1)
+                .set(ResourceType.CLAY, 2)
+                .set(ResourceType.ORE, 0)
+                .set(ResourceType.GLASS, 1)
+                .set(ResourceType.TEXTILE, 2)
+                .set(ResourceType.PAPYRUS, 0);
+        @Jailbreak ResourceProfile profile1 = this.createInstance();
+        profile1.resourceItems = resources;
+        @Jailbreak ResourceProfile profile2 = new @Jailbreak ResourceProfile(profile1);
+        assertEquals(resources, profile2.resourceItems);
+    }
 }

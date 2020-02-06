@@ -18,4 +18,8 @@ public final class ResourceProfile {
         this.resourceItems = Stream.of(ResourceType.values())
                 .toMap(type -> type, type -> 0);
     }
+
+    private ResourceProfile(ResourceProfile other) {
+        this.resourceItems = Map.copyOf(other.resourceItems);
+    }
 }
