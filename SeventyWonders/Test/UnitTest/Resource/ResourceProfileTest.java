@@ -18,7 +18,7 @@ public final class ResourceProfileTest implements SingleClassUnitTest<ResourcePr
 
     @Override
     public ResourceProfile createRealInstance() {
-        return new ResourceProfile();
+        return ResourceProfile.emptyProfile();
     }
 
     @Test
@@ -48,6 +48,20 @@ public final class ResourceProfileTest implements SingleClassUnitTest<ResourcePr
     }
 
     @Test
+    public void test_emptyProfile_happyPath() {
+        @Jailbreak ResourceProfile profile = this.createInstance();
+        profile.resourceItems
+                .set(ResourceType.WOOD, 0)
+                .set(ResourceType.STONE, 0)
+                .set(ResourceType.CLAY, 0)
+                .set(ResourceType.ORE, 0)
+                .set(ResourceType.GLASS, 0)
+                .set(ResourceType.TEXTILE, 0)
+                .set(ResourceType.PAPYRUS, 0);
+        assertEquals(profile, ResourceProfile.emptyProfile());
+    }
+
+    @Test
     public void test_constructor_happyPath() {
         Map<ResourceType, Integer> resources = Map.<ResourceType, Integer>emptyMap()
                 .set(ResourceType.WOOD, 0)
@@ -57,7 +71,7 @@ public final class ResourceProfileTest implements SingleClassUnitTest<ResourcePr
                 .set(ResourceType.GLASS, 0)
                 .set(ResourceType.TEXTILE, 0)
                 .set(ResourceType.PAPYRUS, 0);
-        @Jailbreak ResourceProfile profile = new ResourceProfile();
+        @Jailbreak ResourceProfile profile = new @Jailbreak ResourceProfile();
         assertEquals(resources, profile.resourceItems);
     }
 }

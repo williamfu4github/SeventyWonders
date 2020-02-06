@@ -10,7 +10,11 @@ public final class ResourceProfile {
     @EqualsAndHashCode.Include
     private Map<ResourceType, Integer> resourceItems;
 
-    public ResourceProfile() {
+    public static ResourceProfile emptyProfile() {
+        return new ResourceProfile();
+    }
+
+    private ResourceProfile() {
         this.resourceItems = Stream.of(ResourceType.values())
                 .toMap(type -> type, type -> 0);
     }
