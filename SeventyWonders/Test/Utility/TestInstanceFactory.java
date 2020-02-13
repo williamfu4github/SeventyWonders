@@ -1,6 +1,7 @@
 package Utility;
 
 import UnitTest.Aspect.CivilizationAspectTest;
+import UnitTest.Aspect.Structure.CivilizationStructureTest;
 import UnitTest.Benefit.CivilizationBenefitTest;
 import UnitTest.Benefit.ResourceSupply.DedicatedSupplyTest;
 import UnitTest.Benefit.ResourceSupply.FlexibleSupplyTest;
@@ -15,6 +16,7 @@ public final class TestInstanceFactory {
     public static DedicatedSupplyTest DedicatedSupplyTest;
     public static FlexibleSupplyTest FlexibleSupplyTest;
     public static CivilizationAspectTest CivilizationAspectTest;
+    public static CivilizationStructureTest CivilizationStructureTest;
 
     static {
         ResourceProfileTest = new ResourceProfileTest();
@@ -23,5 +25,6 @@ public final class TestInstanceFactory {
         DedicatedSupplyTest = new DedicatedSupplyTest();
         FlexibleSupplyTest = new FlexibleSupplyTest();
         CivilizationAspectTest = new CivilizationAspectTest();
+        CivilizationStructureTest = new CivilizationStructureTest();
     }
 }

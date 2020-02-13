@@ -3,6 +3,7 @@ package UnitTest.Aspect;
 import Aspect.CivilizationAspect;
 import TesterBase.UnitTest.SingleClassUnitTest;
 import org.junit.jupiter.api.Test;
+import static Utility.TestInstanceFactory.CivilizationStructureTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public final class CivilizationAspectTest implements SingleClassUnitTest<CivilizationAspect> {
@@ -13,8 +14,7 @@ public final class CivilizationAspectTest implements SingleClassUnitTest<Civiliz
 
     @Override
     public CivilizationAspect createRealInstance() {
-        // TODO return real object
-        return null;
+        return CivilizationStructureTest.createRealInstance();
     }
 
     @Test
