@@ -3,6 +3,7 @@ package Utility;
 import UnitTest.Aspect.CivilizationAspectTest;
 import UnitTest.Aspect.Structure.CivilizationStructureTest;
 import UnitTest.Aspect.Structure.RawMaterials.MineTest;
+import UnitTest.Aspect.Structure.RawMaterials.OreVeinTest;
 import UnitTest.Aspect.Structure.RawMaterials.RawMaterialsStructureTest;
 import UnitTest.Benefit.CivilizationBenefitTest;
 import UnitTest.Benefit.ResourceSupply.DedicatedSupplyTest;
@@ -21,6 +22,7 @@ public final class TestInstanceFactory {
     public static CivilizationStructureTest CivilizationStructureTest;
     public static RawMaterialsStructureTest RawMaterialsStructureTest;
     public static MineTest MineTest;
+    public static OreVeinTest OreVeinTest;
 
     static {
         ResourceProfileTest = new ResourceProfileTest();
@@ -32,5 +34,6 @@ public final class TestInstanceFactory {
         CivilizationStructureTest = new CivilizationStructureTest();
         RawMaterialsStructureTest = new RawMaterialsStructureTest();
         MineTest = new MineTest();
+        OreVeinTest = new OreVeinTest();
     }
 }
