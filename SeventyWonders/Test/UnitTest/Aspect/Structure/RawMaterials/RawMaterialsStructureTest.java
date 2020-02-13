@@ -4,6 +4,7 @@ import Aspect.Structure.RawMaterials.RawMaterialsStructure;
 import TesterBase.UnitTest.SingleClassUnitTest;
 import org.junit.jupiter.api.Test;
 import static Utility.TestInstanceFactory.CivilizationStructureTest;
+import static Utility.TestInstanceFactory.MineTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public final class RawMaterialsStructureTest implements SingleClassUnitTest<RawMaterialsStructure> {
@@ -15,8 +16,7 @@ public final class RawMaterialsStructureTest implements SingleClassUnitTest<RawM
 
     @Override
     public RawMaterialsStructure createRealInstance() {
-        // TODO return real object
-        return null;
+        return MineTest.createRealInstance();
     }
 
     @Test
