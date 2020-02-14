@@ -9,6 +9,7 @@ import UnitTest.Benefit.CivilizationBenefitTest;
 import UnitTest.Benefit.ResourceSupply.DedicatedSupplyTest;
 import UnitTest.Benefit.ResourceSupply.FlexibleSupplyTest;
 import UnitTest.Benefit.ResourceSupply.ResourceSupplyTest;
+import UnitTest.Civilization.HumanCivilizationTest;
 import UnitTest.Resource.ResourceProfileTest;
 
 public final class TestInstanceFactory {
@@ -23,6 +24,7 @@ public final class TestInstanceFactory {
     public static RawMaterialsStructureTest RawMaterialsStructureTest;
     public static MineTest MineTest;
     public static OreVeinTest OreVeinTest;
+    public static HumanCivilizationTest HumanCivilizationTest;
 
     static {
         ResourceProfileTest = new ResourceProfileTest();
@@ -35,5 +37,6 @@ public final class TestInstanceFactory {
         RawMaterialsStructureTest = new RawMaterialsStructureTest();
         MineTest = new MineTest();
         OreVeinTest = new OreVeinTest();
+        HumanCivilizationTest = new HumanCivilizationTest();
     }
 }
