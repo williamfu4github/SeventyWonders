@@ -1,5 +1,6 @@
 package UnitTest.Civilization;
 
+import Aspect.CivilizationAspect;
 import Civilization.HumanCivilization;
 import TesterBase.UnitTest.SingleClassUnitTest;
 import com.google.common.collect.Multiset;
@@ -46,6 +47,13 @@ public final class HumanCivilizationTest implements SingleClassUnitTest<HumanCiv
         civilization2.developedAspects
                 .insert(OreVeinTest.createInstance());
         assertNotEquals(civilization1, civilization2);
+    }
+
+    @Test
+    public void test_developedAspects_happyPath() {
+        @Jailbreak HumanCivilization civilization = this.createInstance();
+        civilization.developedAspects = Multiset.<CivilizationAspect>of(MineTest.createInstance());
+        assertEquals(Multiset.of(MineTest.createInstance()), civilization.developedAspects());
     }
 
     @Test

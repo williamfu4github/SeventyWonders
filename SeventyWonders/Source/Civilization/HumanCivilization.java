@@ -10,6 +10,10 @@ public abstract class HumanCivilization {
     @EqualsAndHashCode.Include
     private Multiset<CivilizationAspect> developedAspects;
 
+    public Multiset<CivilizationAspect> developedAspects() {
+        return this.developedAspects;
+    }
+
     protected HumanCivilization() {
         this.developedAspects = Multiset.<CivilizationAspect>emptyMultiset();
     }
