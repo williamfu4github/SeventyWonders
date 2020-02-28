@@ -6,6 +6,7 @@ import TesterBase.UnitTest.SingleClassUnitTest;
 import com.google.common.collect.Multiset;
 import manifold.ext.api.Jailbreak;
 import org.junit.jupiter.api.Test;
+import java.util.Set;
 import static Utility.TestInstanceFactory.MineTest;
 import static Utility.TestInstanceFactory.OreVeinTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,6 +20,7 @@ public final class HumanCivilizationTest implements SingleClassUnitTest<HumanCiv
     @Override
     public void clearInstance(@Jailbreak HumanCivilization instance) {
         instance.developedAspects.clear();
+        instance.rulingGovernment.clear();
     }
 
     @Override
@@ -35,11 +37,12 @@ public final class HumanCivilizationTest implements SingleClassUnitTest<HumanCiv
         @Jailbreak HumanCivilization civilization2 = this.createInstance();
         civilization2.developedAspects
                 .insert(MineTest.createInstance());
+        // TODO add equal rulingGovernments to the two civilizations
         assertEquals(civilization1, civilization2);
     }
 
     @Test
-    public void test_equals_negative() {
+    public void test_equals_negative_developedAspects() {
         @Jailbreak HumanCivilization civilization1 = this.createInstance();
         civilization1.developedAspects
                 .insert(MineTest.createInstance());
@@ -47,6 +50,11 @@ public final class HumanCivilizationTest implements SingleClassUnitTest<HumanCiv
         civilization2.developedAspects
                 .insert(OreVeinTest.createInstance());
         assertNotEquals(civilization1, civilization2);
+    }
+
+    @Test
+    public void test_equals_negative_rulingGovernment() {
+        // TODO add two different GovernmentMinistry
     }
 
     @Test
@@ -60,5 +68,17 @@ public final class HumanCivilizationTest implements SingleClassUnitTest<HumanCiv
     public void test_constructor_happyPath() {
         @Jailbreak HumanCivilization civilization = new HumanCivilizationSubclass();
         assertEquals(Multiset.emptyMultiset(), civilization.developedAspects);
+        assertEquals(Set.emptySet(), civilization.rulingGovernment);
+    }
+
+    // invariant: each GovernmentMinistry in field rulingGovernment has its unique type
+    @Test
+    public void test_invariant_governmentMinistryUniqueType_happyPath() {
+        @Jailbreak HumanCivilization civilization = new HumanCivilizationSubclass();
+        Integer uniqueTypeCount = civilization.rulingGovernment.stream()
+                .map(ministry -> ministry.getClass())
+                .toSet()
+                .size();
+        assertEquals(uniqueTypeCount, civilization.rulingGovernment.size());
     }
 }
